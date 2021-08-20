@@ -1,0 +1,27 @@
+# action.yml
+name: 'Zola deploy via LFTP'
+description: 'Builds a zola static site and deploys the build via lftp to a server'
+inputs:
+  ftp_host:
+    description: 'The FTP hostname'
+    required: true
+  ftp_port:
+    description: 'The FTP port'
+    required: false
+    default: 21
+  ftp_username:
+    description: 'The FTP username'
+    required: true
+  ftp_password:
+    description: 'The FTP password'
+    required: true
+  remote_target_dir:
+    description: 'The target directory on the server'
+    required: true
+  zola_build_dir:
+    description: 'The build directory of zola (default: public)'
+    required: false
+    default: 'public'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
