@@ -1,7 +1,8 @@
 # Container image that runs your code
-FROM balthek/zola:0.14.0
+FROM alpine:3.10
 
-RUN apt-get install -y lftp
+RUN apk --no-cache add lftp
+Run apk --no-cache add zola --repository http://dl-cdn.alpinelinux.org/alpine/edge/community/
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh

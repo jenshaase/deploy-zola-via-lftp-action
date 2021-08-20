@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh -l
 SOURCEFOLDER='public'
 
 zola build || exit 1
